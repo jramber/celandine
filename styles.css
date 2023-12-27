@@ -1,0 +1,124 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background: url(assets/TidyUp.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #EEE;
+}
+
+#content-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#content{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5rem;
+    margin-bottom: 7rem;
+}
+
+#content:before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(100px);
+    -webkit-mask: linear-gradient(180deg, transparent, black 80%);
+    background-color: rgba(0,0,0,.5);
+}
+
+#content > * {
+    position: relative;
+    z-index: 10;
+    width: 70%;
+}
+
+.center {
+    display: block;
+    text-align: center;
+}
+
+#links-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#links > div {
+   display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#links > div span {
+    font-size: 1rem;
+}
+
+#links img {
+    transition: all .15s ease;
+}
+
+#links img:hover {
+    filter: drop-shadow(0 0 20px #bd5959);
+}
+
+#email-input {
+    display: flex;
+    position: relative;
+}
+
+#email-input button {
+    border-radius: 50px;
+    font-size: 2rem;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    cursor: pointer;
+}
+
+#email-input input {
+    border-radius: 50px;
+    font-size: 2rem;
+    border: 2px solid #EEE;
+    padding: 10px 40px;
+    background-color: transparent;
+    color: #EEE;
+}
+
+#email-input input::placeholder {
+   color: #999;
+}
