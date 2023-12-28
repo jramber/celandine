@@ -91,7 +91,28 @@ body {
 }
 
 #links img:hover {
-    filter: drop-shadow(0 0 20px #bd5959);
+    filter: drop-shadow(0 0 10px #bd5959);
+}
+
+#links a >  div {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#links a > div span {
+    color: #EEE;
+    text-decoration: none;
+}
+
+#links a:hover > div span {
+    text-decoration: underline;
+}
+
+#links a img:hover {
+    filter: drop-shadow(0 0 20px #777);
 }
 
 #email-input {
