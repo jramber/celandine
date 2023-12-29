@@ -17,16 +17,16 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(11, 1fr);
+    gap: .5rem;
 
     background-color: #f7f3ef;
     padding: 1rem;
 }
 
 .cell {
-    margin: 1rem;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #efe9dc;
-    padding: 1rem;
+    padding: .5rem;
     display: grid;
     place-content: center;
     position: relative;
@@ -45,12 +45,12 @@ body {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 h1 {
     font-family: 'Caveat', cursive;
-    font-size: 8rem;
+    font-size: 4rem;
 }
 
 #title {
@@ -60,17 +60,18 @@ h1 {
 
 span {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
     text-align: center;
 }
 
 #description {
     grid-column: 1/4;
     grid-row: 7/9;
+
+    padding: 1rem;
 }
 
 #description span {
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 .cell.entry {
@@ -79,8 +80,7 @@ span {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    font-size: 1rem;
-    min-height: 225px;
+    font-size: .8rem;
 }
 
 .grow {
@@ -99,23 +99,25 @@ a, a:visited {
 div:has(#email-input) {
     grid-column: 1/3;
     grid-row: 9/10;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #email-input {
     border: none;
     background-color: transparent;
-    font-size: 2.5rem;
+    font-size: 1rem;
     width: 100%;
 }
 
 div:has(#email-input):after {
     content: '';
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 5%;
     width: 90%;
-    height: 5px;
+    height: 2px;
     background-color: #342A21;
     border-radius: 20px;
 }
@@ -131,7 +133,7 @@ div:has(#email-input):after {
     background-color: #342A21;
     border: none;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
