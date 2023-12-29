@@ -34,8 +34,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 5rem;
-    padding: 4rem;
-    padding-bottom: 7rem;
+    padding: 7rem 4rem;
 }
 
 #content:before{
@@ -53,7 +52,7 @@ body {
     z-index: 10;
 }
 
-.center {
+#content > span {
     display: block;
     text-align: center;
 }
