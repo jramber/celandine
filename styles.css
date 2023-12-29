@@ -16,7 +16,7 @@ body {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 1fr);
 
     background-color: #f7f3ef;
     padding: 1rem;
@@ -29,6 +29,7 @@ body {
     padding: 1rem;
     display: grid;
     place-content: center;
+    position: relative;
 }
 
 .cell:has(img) {
@@ -68,6 +69,10 @@ span {
     grid-row: 7/9;
 }
 
+#description span {
+    font-size: 3rem;
+}
+
 .cell.entry {
     display: flex;
     flex-flow: column nowrap;
@@ -75,6 +80,7 @@ span {
     justify-content: center;
     gap: .5rem;
     font-size: 1rem;
+    min-height: 225px;
 }
 
 .grow {
@@ -90,13 +96,27 @@ a, a:visited {
     color: #342A21;
 }
 
-#email-input {
+div:has(#email-input) {
     grid-column: 1/3;
     grid-row: 9/10;
+    display: block;
+}
 
+#email-input {
     border: none;
-    background-color: transparent;
-    font-size: 2rem;
+    background-color: #efe9dc;
+    font-size: 2.5rem;
+}
+
+div:has(#email-input):after {
+    content: '';
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+    width: 90%;
+    height: 5px;
+    background-color: #342A21;
+    border-radius: 20px;
 }
 
 #email-input:active,
@@ -111,6 +131,8 @@ a, a:visited {
     background-color: #342A21;
     border: none;
     color: white;
+
+    font-size: 2.5rem;
 }
 
 #email-input input::placeholder {
