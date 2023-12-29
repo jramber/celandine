@@ -9,6 +9,9 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    width: 100%;
+    height: 100vh;
 }
 
 body {
@@ -18,11 +21,7 @@ body {
     font-size: 3rem;
     font-family: 'Roboto', sans-serif;
     color: #EEE;
-}
 
-#content-wrapper {
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -35,7 +34,8 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: 5rem;
-    margin-bottom: 7rem;
+    padding: 4rem;
+    padding-bottom: 7rem;
 }
 
 #content:before{
@@ -43,6 +43,7 @@ body {
     position: absolute;
     inset: 0;
     backdrop-filter: blur(100px);
+    mask: linear-gradient(180deg, transparent, black 80%);
     -webkit-mask: linear-gradient(180deg, transparent, black 80%);
     background-color: rgba(0,0,0,.5);
 }
@@ -50,7 +51,6 @@ body {
 #content > * {
     position: relative;
     z-index: 10;
-    width: 70%;
 }
 
 .center {
