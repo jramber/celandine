@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html {
-    background: url(assets/TidyUp.png) no-repeat center center fixed;
+    background: url(assets/TidyUp.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,8 +68,8 @@ body {
 
 #links {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 3rem;
     width: 100%;
     align-items: center;
     justify-content: space-around;
@@ -77,6 +77,22 @@ body {
 
 #links > div {
    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.entry {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.entry a {
+    display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
