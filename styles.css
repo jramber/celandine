@@ -111,7 +111,7 @@ div:has(#email-input) {
 div:has(#email-input):after {
     content: '';
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     left: 5%;
     width: 90%;
     height: 5px;
