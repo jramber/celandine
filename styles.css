@@ -15,7 +15,7 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
     background-color: #f7f3ef;
@@ -36,7 +36,8 @@ body {
 }
 
 #background {
-    grid-column: 1/5;
+    grid-column: 1/4;
+    grid-row: 3/7;
 }
 
 #background img {
@@ -52,7 +53,8 @@ h1 {
 }
 
 #title {
-    grid-column: 1/5;
+    grid-column: 1/4;
+    grid-row: 1/3;
 }
 
 span {
@@ -62,24 +64,55 @@ span {
 }
 
 #description {
-    grid-column: 1/5;
+    grid-column: 1/4;
+    grid-row: 7/9;
 }
 
-.entry {
+.cell.entry {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
+    font-size: 1rem;
+}
+
+.grow {
+    transition: all .15s ease-out;
+}
+
+.grow:hover {
+    /* transform: scale(1.05); */
+    box-shadow: 0 0 20px #342A2130;
+}
+
+a, a:visited {
+    color: #342A21;
 }
 
 #email-input {
-    display: flex;
-    position: relative;
+    grid-column: 1/3;
+    grid-row: 9/10;
+}
 
-    grid-column: 1/5;
+#email-input input {
+    border: none;
+    border-bottom: 1px solid #342A21;
+    background-color: transparent;
+    font-size: 2rem;
+}
+
+#email-button {
+    grid-column: 3/4;
+    grid-row: 9/10;
+}
+
+#email-button button {
+    background-color: #342A21;
+    border: none;
+    color: white;
 }
 
 #email-input input::placeholder {
-   color: #999;
+   color: #342A2160;
 }
