@@ -19,8 +19,7 @@ body {
     grid-template-rows: repeat(11, 1fr);
     gap: .5rem;
 
-    /* background-color: #f7f3ef; */
-    background-color: #342A21;
+    background-color: #f7f3ef;
     padding: 1rem;
 }
 
@@ -82,6 +81,10 @@ span {
     justify-content: center;
     gap: .5rem;
     font-size: .8rem;
+}
+
+#raven {
+    background-color: #f7f3ef;
 }
 
 .grow {
@@ -173,7 +176,9 @@ div:has(#email-input):after {
         grid-row: 5/6;
     }
 
-
+    #raven {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px) {
