@@ -19,7 +19,8 @@ body {
     grid-template-rows: repeat(11, 1fr);
     gap: .5rem;
 
-    background-color: #f7f3ef;
+    /* background-color: #f7f3ef; */
+    background-color: #342A21;
     padding: 1rem;
 }
 
