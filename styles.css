@@ -104,8 +104,9 @@ div:has(#email-input) {
 
 #email-input {
     border: none;
-    background-color: #efe9dc;
+    background-color: transparent;
     font-size: 2.5rem;
+    width: 100%;
 }
 
 div:has(#email-input):after {
@@ -127,14 +128,45 @@ div:has(#email-input):after {
 #email-button {
     grid-column: 3/4;
     grid-row: 9/10;
-
     background-color: #342A21;
     border: none;
     color: white;
-
     font-size: 2.5rem;
+    cursor: pointer;
 }
 
 #email-input input::placeholder {
    color: #342A2160;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    #background {
+        grid-column: 1/3;
+        grid-row: 2/5;
+    }
+
+    #title {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    #description {
+        grid-column: 3/6;
+        grid-row: 2/4;
+    }
+
+    div:has(#email-input) {
+        grid-column: 3/5;
+        grid-row: 4/5;
+    }
+
+    #email-button {
+        grid-column: 5/6;
+        grid-row: 4/5;
+    }
 }
