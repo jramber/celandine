@@ -1,5 +1,8 @@
+const form = document.querySelector('#email-form');
 const email_submit_button = document.querySelector('#email-button');
+
 const email_input = document.querySelector('#email-input');
+
 const pop_up = document.querySelector('#pop-up');
 const pop_up_msg = document.querySelector('#pop-up span');
 const pop_up_cross = document.querySelector('#cross');
@@ -27,20 +30,9 @@ email_submit_button.addEventListener('click', async () => {
         show_pop_up();
     }
 
+
     if(validateEmail(email_input.value)){
-        const formData = new FormData();
-
-        formData.append("EMAIL", email_input.value);
-
-        try {
-            const response = await fetch("https://gmail.us8.list-manage.com/subscribe/post?u=02164d34cf05821b94a23aab3&amp;id=69236752be&amp;f_id=006fd0e3f0", {
-                method: "POST",
-                body: formData,
-            });
-            console.log(await response.json());
-        } catch (e) {
-            console.error(e);
-        }
+        form.submit();
 
         if(pop_up.classList.contains('error')) {
             pop_up.classList.remove('error');
