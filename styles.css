@@ -8,6 +8,7 @@ html {
     font-family: 'Roboto', sans-serif;
     font-family: 'Caveat', cursive;
     color: #342A21;
+    position: relative;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
     background-color: #f7f3ef;
     padding: 1rem;
 
+    position: relative;
     overflow: hidden;
 }
 
