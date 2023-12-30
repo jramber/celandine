@@ -145,6 +145,39 @@ div:has(#email-input):after {
    color: #342A2160;
 }
 
+#pop-up {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    padding: 1rem;
+    background-color: #efe9dc;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    /* width: 400px; */
+    max-width: 400px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15px 1fr;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    gap: .5rem;
+}
+
+#cross {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    justify-self: flex-end;
+}
+
+#pop-up span {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
 @media (min-width: 768px) {
     body {
         grid-template-columns: repeat(5, 1fr);
