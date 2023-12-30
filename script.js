@@ -8,7 +8,8 @@ const pop_up_msg = document.querySelector('#pop-up span');
 const pop_up_cross = document.querySelector('#cross');
 
 const success_msg = "Thank you for joining our mail list.\nYou will only get notified when Celandine is ready!";
-const error_msg = "Ups! Try filling the email input first.";
+const empty_email_error_msg = "Ups! Try filling the email input first.";
+const error_msg = "Ups! Looks like the email you wrote is not valid.";
 
 // const validation_regex = '/^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;\n';
 
@@ -26,7 +27,7 @@ const show_pop_up = () => {
 email_submit_button.addEventListener('click', async () => {
     if(email_input.value === "") {
         pop_up.classList.add('error');
-        pop_up_msg.innerText = error_msg;
+        pop_up_msg.innerText = empty_email_error_msg;
         show_pop_up();
     }
 
@@ -39,6 +40,12 @@ email_submit_button.addEventListener('click', async () => {
         }
 
         pop_up_msg.innerText = success_msg;
+        show_pop_up();
+
+        email_input.value = '';
+    } else {
+        pop_up.classList.add('error');
+        pop_up_msg.innerText = error_msg;
         show_pop_up();
     }
 });
