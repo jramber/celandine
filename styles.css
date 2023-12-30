@@ -8,9 +8,9 @@ html {
     font-family: 'Roboto', sans-serif;
     font-family: 'Caveat', cursive;
     color: #342A21;
-    position: relative;
-    overflow: hidden;
-}
+
+    touch-action: none;
+    -ms-touch-action: none;}
 
 body {
     width: 100%;
@@ -24,7 +24,6 @@ body {
     background-color: #f7f3ef;
     padding: 1rem;
 
-    position: relative;
     overflow: hidden;
 }
 
