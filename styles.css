@@ -22,7 +22,8 @@ body {
     background-color: #f7f3ef;
     padding: 1rem;
 
-    /* overflow: hidden; */
+    overflow-y: hidden;
+    -ms-overflow-y: hidden;
 }
 
 .cell {

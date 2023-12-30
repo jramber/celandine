@@ -33,7 +33,7 @@ email_submit_button.addEventListener('click', async () => {
 
 
     if(validateEmail(email_input.value)){
-        form.submit();
+        // form.submit();
 
         if(pop_up.classList.contains('error')) {
             pop_up.classList.remove('error');
