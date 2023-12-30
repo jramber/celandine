@@ -21,9 +21,6 @@ body {
 
     background-color: #f7f3ef;
     padding: 1rem;
-
-    overflow-y: hidden;
-    -ms-overflow-y: hidden;
 }
 
 .cell {
@@ -150,7 +147,7 @@ div:has(#email-form):after {
 
 #pop-up {
     position: absolute;
-    bottom: -150px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -169,6 +166,9 @@ div:has(#email-form):after {
     grid-template-rows: 1fr;
     box-shadow: 0 0 20px rgba(0,0,0,.2);
     gap: 1rem;
+
+    visibility: hidden;
+    opacity: 0;
 }
 
 #pop-up.error {
@@ -185,7 +185,6 @@ div:has(#email-form):after {
 #pop-up span {
     grid-column: 1/2;
     grid-row: 1/2;
-    font-size: 1.2rem;
 }
 
 .show-up {
@@ -195,11 +194,13 @@ div:has(#email-form):after {
 
 @keyframes show-up {
     from {
-        bottom: -150px;
+        visibility: hidden;
+        opacity: 0;
     }
 
     to {
-        bottom: 35px;
+        visibility: visible;
+        opacity: 1;
     }
 }
 
@@ -210,11 +211,13 @@ div:has(#email-form):after {
 
 @keyframes hide-pop-up {
     from {
-        bottom: 35px;
+        visibility: visible;
+        opacity: 1;
     }
 
     to {
-        bottom: -150px;
+        visibility: hidden;
+        opacity: 0;
     }
 }
 
