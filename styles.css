@@ -21,6 +21,8 @@ body {
 
     background-color: #f7f3ef;
     padding: 1rem;
+
+    overflow: hidden;
 }
 
 .cell {
@@ -147,27 +149,33 @@ div:has(#email-input):after {
 
 #pop-up {
     position: absolute;
-    bottom: 35px;
+    bottom: -150px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
 
     padding: 1rem;
-    background-color: #efe9dc;
+    /* background-color: #6b8e68; */
+    background-color: #aebc89;
+    color: #f4f3e6;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
-    /* width: 400px; */
-    max-width: 400px;
+    width: calc(100vw - (2*1rem));
+    max-width: 500px;
 
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 15px 1fr;
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    gap: .5rem;
+    grid-template-columns: 1fr 15px;
+    grid-template-rows: 1fr;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    gap: 1rem;
+}
+
+#pop-up.error {
+    background-color: #ea8c84;
 }
 
 #cross {
-    grid-column: 1/2;
+    grid-column: 2/3;
     grid-row: 1/2;
 
     justify-self: flex-end;
@@ -175,7 +183,38 @@ div:has(#email-input):after {
 
 #pop-up span {
     grid-column: 1/2;
-    grid-row: 2/3;
+    grid-row: 1/2;
+    font-size: 1.2rem;
+}
+
+.show-up {
+    animation: show-up .25s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-up {
+    from {
+        bottom: -150px;
+    }
+
+    to {
+        bottom: 35px;
+    }
+}
+
+.hide {
+    animation: hide-pop-up .25s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide-pop-up {
+    from {
+        bottom: 35px;
+    }
+
+    to {
+        bottom: -150px;
+    }
 }
 
 @media (min-width: 768px) {

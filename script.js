@@ -1,12 +1,13 @@
 const email_submit_button = document.querySelector('#email-button');
 const email_input = document.querySelector('#email-input');
+const pop_up = document.querySelector('#pop-up');
+const pop_up_msg = document.querySelector('#pop-up span');
+const pop_up_cross = document.querySelector('#cross');
+
+const success_msg = "Thank you for joining our mail list.\nYou will only get notified when Celandine is ready!";
+const error_msg = "Ups! Try filling the email input first.";
 
 // const validation_regex = '/^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;\n';
-
-// const form = new HTMLFormElement();
-// form.action = "https://gmail.us8.list-manage.com/subscribe/post?u=02164d34cf05821b94a23aab3&amp;id=69236752be&amp;f_id=006fd0e3f0";
-// form.method = "post";
-
 
 const validateEmail = (email) => String(email)
     .toLowerCase()
@@ -28,17 +29,41 @@ async function sendData(email) {
     }
 }
 
+const show_pop_up = () => {
+    if(pop_up.classList.contains('hide')) {
+        pop_up.classList.remove('hide');
+    }
+    pop_up.classList.add('show-up');
+}
+
+const hide_pop_up = () => {
+    if(pop_up.classList.contains('show-up')) {
+        pop_up.classList.remove('show-up');
+    }
+    pop_up.classList.add('hide');
+}
+
 email_submit_button.addEventListener('click', async () => {
     if(email_input.value === "") {
-        return;
+        pop_up.classList.add('error');
+        pop_up_msg.innerText = error_msg;
+        show_pop_up();
     }
 
     if(validateEmail(email_input.value)){
         await sendData();
+        if(pop_up.classList.contains('error')) {
+            pop_up.classList.remove('error');
+        }
+        pop_up_msg.innerText = success_msg;
+        show_pop_up();
     }
 });
 
+pop_up_cross.addEventListener('click', () => {
+    hide_pop_up();
+});
+
 // TODO: listen to return key pressed
-// TODO: Add pop up message
 // TODO: add @ShoisiroX
 
