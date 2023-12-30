@@ -13,34 +13,11 @@ const validateEmail = (email) => String(email)
     .toLowerCase()
     .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-async function sendData(email) {
-    const formData = new FormData();
-
-    formData.append("EMAIL", email);
-
-    try {
-        const response = await fetch("https://gmail.us8.list-manage.com/subscribe/post?u=02164d34cf05821b94a23aab3&amp;id=69236752be&amp;f_id=006fd0e3f0", {
-            method: "POST",
-            body: formData,
-        });
-        console.log(await response.json());
-    } catch (e) {
-        console.error(e);
-    }
-}
-
 const show_pop_up = () => {
     if(pop_up.classList.contains('hide')) {
         pop_up.classList.remove('hide');
     }
     pop_up.classList.add('show-up');
-}
-
-const hide_pop_up = () => {
-    if(pop_up.classList.contains('show-up')) {
-        pop_up.classList.remove('show-up');
-    }
-    pop_up.classList.add('hide');
 }
 
 email_submit_button.addEventListener('click', async () => {
@@ -51,17 +28,34 @@ email_submit_button.addEventListener('click', async () => {
     }
 
     if(validateEmail(email_input.value)){
-        await sendData();
+        const formData = new FormData();
+
+        formData.append("EMAIL", email_input.value);
+
+        try {
+            const response = await fetch("https://gmail.us8.list-manage.com/subscribe/post?u=02164d34cf05821b94a23aab3&amp;id=69236752be&amp;f_id=006fd0e3f0", {
+                method: "POST",
+                body: formData,
+            });
+            console.log(await response.json());
+        } catch (e) {
+            console.error(e);
+        }
+
         if(pop_up.classList.contains('error')) {
             pop_up.classList.remove('error');
         }
+
         pop_up_msg.innerText = success_msg;
         show_pop_up();
     }
 });
 
 pop_up_cross.addEventListener('click', () => {
-    hide_pop_up();
+    if(pop_up.classList.contains('show-up')) {
+        pop_up.classList.remove('show-up');
+    }
+    pop_up.classList.add('hide');
 });
 
 // TODO: listen to return key pressed
