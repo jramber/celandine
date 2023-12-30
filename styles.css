@@ -8,9 +8,7 @@ html {
     font-family: 'Roboto', sans-serif;
     font-family: 'Caveat', cursive;
     color: #342A21;
-
-    touch-action: none;
-    -ms-touch-action: none;}
+}
 
 body {
     width: 100%;
@@ -24,7 +22,7 @@ body {
     background-color: #f7f3ef;
     padding: 1rem;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .cell {
@@ -75,7 +73,7 @@ span {
 }
 
 #description span {
-    font-size: 1.5rem;
+    font-size: calc(100vw * 0.055);
 }
 
 .cell.entry {
