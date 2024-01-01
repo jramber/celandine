@@ -51,6 +51,7 @@ body {
 h1 {
     font-family: 'Caveat', cursive;
     font-size: 4rem;
+    color: #a48352;
 }
 
 #title {
@@ -83,6 +84,10 @@ span {
     font-size: .8rem;
 }
 
+.cell.entry span {
+    color: #a48352;
+}
+
 #raven {
     background-color: #f7f3ef;
 }
@@ -98,7 +103,7 @@ span {
 }
 
 a, a:visited {
-    color: #342A21;
+    color: #a48352;
 }
 
 div:has(#email-form) {
@@ -123,7 +128,7 @@ div:has(#email-form):after {
     left: 5%;
     width: 90%;
     height: 2px;
-    background-color: #342A21;
+    background-color: #a48352;
     border-radius: 20px;
 }
 
@@ -135,7 +140,7 @@ div:has(#email-form):after {
 #email-button {
     grid-column: 3/4;
     grid-row: 9/10;
-    background-color: #342A21;
+    background-color: #c5ce69;
     border: none;
     color: white;
     font-size: 1.5rem;
